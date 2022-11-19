@@ -36,6 +36,7 @@ public class CharacterAttack : Character
     private void Start()
     {
         pooler = GetComponent<ObjectPooling>();
+        meleeAttackObject.SetActive(false);
         //aim = GetComponentInChildren<MouseAim>();
     }
 

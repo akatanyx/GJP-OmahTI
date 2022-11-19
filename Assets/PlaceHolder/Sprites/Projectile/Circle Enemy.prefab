@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5587312248939394230}
   - component: {fileID: -350797536485835487}
   - component: {fileID: -1633866121488926125}
-  - component: {fileID: -8823828762432917757}
-  - component: {fileID: -4269481849269394397}
+  - component: {fileID: 2669076867137365057}
+  - component: {fileID: -7110382233323075275}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Circle Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +123,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-8823828762432917757
+--- !u!114 &2669076867137365057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,11 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45edd653202a9341a4f8307c5e2ad4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
-  acceleration: 5
-  enType: Enemy
+  speed: 100
+  acceleration: 1
+  enType: Player
   isFlying: 1
---- !u!114 &-4269481849269394397
+--- !u!114 &-7110382233323075275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

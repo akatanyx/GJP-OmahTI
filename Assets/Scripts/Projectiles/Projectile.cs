@@ -30,8 +30,8 @@ public class Projectile : MonoBehaviour
     public void MoveProjectile()
     {
         movement = Direction * speed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + movement);
-
+        //rb.MovePosition(rb.position + movement);
+        rb.velocity = movement;
         Speed += acceleration * Time.deltaTime;
     }
 
@@ -50,7 +50,7 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag(enType))
         {
-            Debug.Log("Hit");
+            Debug.Log("Hit " + enType);
             returnToPool.Return();
         }
     }
