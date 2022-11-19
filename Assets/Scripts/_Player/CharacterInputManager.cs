@@ -16,14 +16,8 @@ public class CharacterInputManager : MonoBehaviour
     protected KeyCode rightKey;
     [SerializeField]
     protected KeyCode rightKeyAlternative;
-    public bool JumpPressed()
-    {
-        if (Input.GetKeyDown(jumpKey) || Input.GetKeyDown(jumpKeyAlternative))
-            return true;
-        else
-            return false;
-    }
-
+    [SerializeField]
+    protected KeyCode dashKey;
     public bool LeftHeld()
     {
         if (Input.GetKey(leftKey) || Input.GetKey(leftKeyAlternative))
@@ -34,6 +28,22 @@ public class CharacterInputManager : MonoBehaviour
     public bool RightHeld()
     {
         if (Input.GetKey(rightKey) || Input.GetKey(rightKeyAlternative))
+            return true;
+        else
+            return false;
+    }
+
+    public bool JumpPressed()
+    {
+        if (Input.GetKeyDown(jumpKey) || Input.GetKeyDown(jumpKeyAlternative))
+            return true;
+        else
+            return false;
+    }
+
+    public bool DashPressed()
+    {
+        if (Input.GetKeyDown(dashKey))
             return true;
         else
             return false;

@@ -9,6 +9,8 @@ public class Character : MonoBehaviour
     public bool isGrounded;
     [HideInInspector]
     public bool isFlipped;
+    //[HideInInspector]
+    public bool isDashing;
 
     #endregion
 
@@ -24,8 +26,10 @@ public class Character : MonoBehaviour
     protected CharacterFlip flip;
     #endregion
 
+    public static Character instance;
     private void Awake()
     {
+        instance = this;
         Initialization();
     }
 
