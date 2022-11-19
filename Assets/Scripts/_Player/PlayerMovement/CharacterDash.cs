@@ -14,7 +14,7 @@ public class CharacterDash : Character
     // Update is called once per frame
     void Update()
     {
-        if (inputManager.DashPressed() && canDash)
+        if (inputManager.DashPressed() && canDash && (inputManager.LeftHeld() || inputManager.RightHeld()))
         {
             StartCoroutine(TriggerDash());
         }
@@ -29,10 +29,19 @@ public class CharacterDash : Character
 
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-        if (flip.isFlipped)
+
+        if (inputManager.LeftHeld())
+        {
             rb.velocity = new Vector2(-1 * dashingPower, 0f);
+        }
         else
+        {
             rb.velocity = new Vector2(1 * dashingPower, 0f);
+        }
+        //if (flip.isFlipped)
+        //    rb.velocity = new Vector2(-1 * dashingPower, 0f);
+        //else
+        //    rb.velocity = new Vector2(1 * dashingPower, 0f);
         movement.enabled = false;
         jump.enabled = false;
         attack.enabled = false;

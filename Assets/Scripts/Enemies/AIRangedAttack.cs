@@ -36,7 +36,7 @@ public class AIRangedAttack : AIManagers
             Projectile projectile = projectilePooled.GetComponent<Projectile>();
             //Vector2 newDirection = flip.isFlipped ? -bulletSpawner.transform.right : bulletSpawner.transform.right;
 
-            Vector2 moveDirection = (player.transform.position);
+            Vector2 moveDirection = (player.transform.position-transform.position).normalized;
             projectile.SetDirection(moveDirection, transform.rotation);
 
             //projectile.GetComponent<Rigidbody2D>().velocity = moveDirection;
