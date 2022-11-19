@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed = 100f, acceleration;
-
+    [SerializeField] string enType;
     public Vector2 Direction { get; set; }
     public float Speed { get; set; }
     private Rigidbody2D rb;
@@ -44,5 +44,14 @@ public class Projectile : MonoBehaviour
     private void OnBecameInvisible()
     {
         returnToPool.Return();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag(enType))
+        {
+            Debug.Log("Hit");
+            returnToPool.Return();
+        }
     }
 }

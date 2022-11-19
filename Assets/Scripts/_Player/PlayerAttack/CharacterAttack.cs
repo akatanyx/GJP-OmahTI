@@ -17,7 +17,7 @@ public class CharacterAttack : Character
     private int rangedAttackTime;
     [SerializeField]
     private int maxRangedAttackTime = 4;
-
+    private MouseAim aim;
     public ObjectPooling pooler { get; set; }
 
 
@@ -108,9 +108,9 @@ public class CharacterAttack : Character
         projectilePooled.SetActive(true);
 
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
-        Vector2 newDirection = flip.isFlipped ? -transform.right : transform.right;
+        Vector2 newDirection = flip.isFlipped ? -bulletSpawner.transform.right : bulletSpawner.transform.right;
 
-        projectile.SetDirection(newDirection, transform.rotation);
+        projectile.SetDirection(newDirection, bulletSpawner.transform.rotation);
     }
 
 

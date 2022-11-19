@@ -19,13 +19,13 @@ public class CharacterMovement : Character
         if (inputManager.RightHeld())
         {
             horizontalInput = 1;
-            flip.FlipCharacter();
+            //flip.FlipCharacter();
             return true;
         }
         else if (inputManager.LeftHeld())
         {
             horizontalInput = -1;
-            flip.FlipCharacter();
+            //flip.FlipCharacter();
             return true;
         }
         else
