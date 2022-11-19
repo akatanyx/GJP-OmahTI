@@ -30,6 +30,7 @@ public class CharacterDash : Character
         canDash = false;
         isDashing = true;
         anim.SetBool("Dashing", true);
+        anim.SetBool("AttackRanged", false);
 
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
@@ -37,6 +38,7 @@ public class CharacterDash : Character
 
         movement.enabled = false;
         jump.enabled = false;
+        attack.enabled = false;
 
         yield return new WaitForSeconds(dashingTime);
 
@@ -46,6 +48,7 @@ public class CharacterDash : Character
 
         movement.enabled = true;
         jump.enabled = true;
+        attack.enabled = true;
 
         yield return new WaitForSeconds(dashingCooldown);
 

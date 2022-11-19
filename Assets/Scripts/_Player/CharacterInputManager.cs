@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterInputManager : MonoBehaviour
 {
+    #region Hotkey
     [SerializeField]
     protected KeyCode jumpKey;
     [SerializeField]
@@ -18,6 +19,9 @@ public class CharacterInputManager : MonoBehaviour
     protected KeyCode rightKeyAlternative;
     [SerializeField]
     protected KeyCode dashKey;
+    [SerializeField]
+    protected KeyCode attackKey;
+    #endregion
     public bool LeftHeld()
     {
         if (Input.GetKey(leftKey) || Input.GetKey(leftKeyAlternative))
@@ -44,6 +48,21 @@ public class CharacterInputManager : MonoBehaviour
     public bool DashPressed()
     {
         if (Input.GetKeyDown(dashKey))
+            return true;
+        else
+            return false;
+    }
+    public bool AttackPressed()
+    {
+        if (Input.GetKey(attackKey))
+            return true;
+        else
+            return false;
+    }
+
+    public bool AttackKeyUp()
+    {
+        if (Input.GetKeyUp(attackKey))
             return true;
         else
             return false;

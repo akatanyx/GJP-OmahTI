@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     public bool isGrounded;
     [HideInInspector]
     public bool isFlipped;
-    //[HideInInspector]
+    [HideInInspector]
     public bool isDashing;
 
     #endregion
@@ -24,6 +24,7 @@ public class Character : MonoBehaviour
     protected CharacterJump jump;
     protected CharacterInputManager inputManager;
     protected CharacterFlip flip;
+    protected CharacterAttack attack;
     #endregion
 
     public static Character instance;
@@ -42,6 +43,7 @@ public class Character : MonoBehaviour
         movement = GetComponent<CharacterMovement>();
         jump = GetComponent<CharacterJump>();
         flip = GetComponent<CharacterFlip>();
+        attack = GetComponent<CharacterAttack>();
         inputManager = GetComponent<CharacterInputManager>();
     }
 
