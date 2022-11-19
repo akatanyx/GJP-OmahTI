@@ -47,7 +47,7 @@ public class AIMeleeAttack : AIManagers
         {
             hit = true;
             Debug.Log("Hit by Enemy");
-            //PlayerPrefs.SetInt("Health", PlayerPrefs.GetInt("Health") - damageAmount);
+            collision.GetComponent<HealthManager>().DealDamage(damageAmount);
         }
     }
 
@@ -59,9 +59,10 @@ public class AIMeleeAttack : AIManagers
             return;
         }
         timeTillDoAction -= Time.deltaTime;
+        swipe.SetActive(false);
         if (timeTillDoAction <= 0)
         {
-            //swipe.SetActive(true);
+            swipe.SetActive(true);
             //GetComponent<Animator>().SetTrigger("Attack");
             //anim.SetBool("Attack", true);
             timeTillDoAction = originalTimeTillDoAction;

@@ -5,7 +5,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed = 100f, acceleration;
+    [SerializeField] private int damage;
     [SerializeField] string enType;
+
     public Vector2 Direction { get; set; }
     public float Speed { get; set; }
     private Rigidbody2D rb;
@@ -50,8 +52,9 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag(enType))
         {
-            Debug.Log("Hit " + enType);
+            //Debug.Log("Hit " + enType);
             returnToPool.Return();
+            collision.GetComponent<HealthManager>().DealDamage(damage);
         }
     }
 }

@@ -79,7 +79,7 @@ public class EnemyMovement : AIManagers
 
     protected virtual void FixedUpdate()
     {
-        if(GetComponent<Health>().healthPoints > 0)
+        if(GetComponent<HealthManager>().healthPoints > 0)
         {
             Movement();
             CheckGround();

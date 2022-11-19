@@ -27,7 +27,7 @@ public class AIRangedAttack : AIManagers
 
     void CheckIfTimeToFire()
     {
-        if (nextFire <= 0 && enemyCharacter.playerIsClose && GetComponent<Health>().healthPoints > 0)
+        if (nextFire <= 0 && enemyCharacter.playerIsClose && GetComponent<HealthManager>().healthPoints > 0)
         {
             //Instantiate(bullet, transform.position, Quaternion.identity);
             GameObject projectilePooled = Pooler.GetObjectFromPool();

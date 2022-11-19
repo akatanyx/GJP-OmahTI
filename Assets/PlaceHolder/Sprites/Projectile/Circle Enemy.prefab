@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 500
   acceleration: 1
+  damage: 2
   enType: Player
   isFlying: 1
 --- !u!114 &-7110382233323075275

@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
     }
 
 
-    public virtual void DealDamage(int amount, bool knockBack)
+    public virtual void DealDamage(int amount, bool knockBack, bool stagger)
     {
         healthPoints -= amount;
         GetComponent<Animator>().SetTrigger("Attacked");
@@ -35,12 +35,15 @@ public class Health : MonoBehaviour
             StartCoroutine(Dying());
         }
 
-        if (enemyCharacter.enType == EnemyCharacter.EnemyType.Ranged)
-            GetComponent<AIRangedAttack>().nextFire = 1f;
-        else
-            GetComponent<AIMeleeAttack>().timeTillDoAction = 1f;
+        if (stagger)
+        {
+            if (enemyCharacter.enType == EnemyCharacter.EnemyType.Ranged)
+                GetComponent<AIRangedAttack>().nextFire = 1f;
+            else
+                GetComponent<AIMeleeAttack>().timeTillDoAction = 1f;
+        }
         
-        Debug.Log(amount + "" + knockBack);
+        
         if (knockBack)
         {
             if (enemyCharacter.facingLeft)
@@ -49,6 +52,7 @@ public class Health : MonoBehaviour
                 rb.AddForce(new Vector2(-50, 0));
             //Debug.Log(rb.velocity);
         }
+        Debug.Log(amount + "" + knockBack);
         StartCoroutine(Blinking());
         //InvokeRepeating("Flashing", 0, 0.1f);
     }
