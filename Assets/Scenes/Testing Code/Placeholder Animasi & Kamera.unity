@@ -824,6 +824,7 @@ GameObject:
   - component: {fileID: 1634464811}
   - component: {fileID: 1634464812}
   - component: {fileID: 1634464814}
+  - component: {fileID: 1634464815}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -845,6 +846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   isFlipped: 0
+  isDashing: 0
 --- !u!212 &1634464806
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -964,6 +966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   isFlipped: 0
+  isDashing: 0
   maxSpeed: 5
   horizontalInput: 0
 --- !u!114 &1634464811
@@ -980,6 +983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   isFlipped: 0
+  isDashing: 0
   jumpForce: 500
   distanceToCollider: 0.1
   collisionLayer:
@@ -1003,6 +1007,7 @@ MonoBehaviour:
   leftKeyAlternative: 276
   rightKey: 100
   rightKeyAlternative: 275
+  dashKey: 32
 --- !u!70 &1634464813
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1033,6 +1038,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGrounded: 0
   isFlipped: 0
+  isDashing: 0
+--- !u!114 &1634464815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634464804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de658a402de3e9448ce5c0dc72f44ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
+  isFlipped: 0
+  isDashing: 0
+  dashingPower: 25
+  dashingTime: 0.2
+  dashingCooldown: 1
 --- !u!1 &2031420699
 GameObject:
   m_ObjectHideFlags: 0

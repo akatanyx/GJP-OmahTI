@@ -20,7 +20,7 @@ public class CharacterJump : Character
 
     private void Jump()
     {
-        if (inputManager.JumpPressed() && isGrounded)
+        if (inputManager.JumpPressed() && isGrounded )
         {
             rb.AddForce(Vector2.up * jumpForce);
             //anim.SetBool("IsJumping", true);
