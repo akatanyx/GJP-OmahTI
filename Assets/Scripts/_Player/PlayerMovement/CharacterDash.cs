@@ -11,11 +11,6 @@ public class CharacterDash : Character
     private float dashingTime;
     [SerializeField]
     private float dashingCooldown;
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

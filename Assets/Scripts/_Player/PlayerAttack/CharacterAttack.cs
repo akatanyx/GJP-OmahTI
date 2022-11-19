@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterAttack : Character
 {
     private bool isAttacking, canAttack = true;
+    public bool canRangedAttackWhileMove;
     public bool isEnemyInProximity;
 
     [SerializeField]
@@ -29,14 +30,11 @@ public class CharacterAttack : Character
     private int maxMeleeAttackTime = 3;
     [SerializeField]
     private GameObject meleeAttackObject;
-    private Collider2D meleeCol;
 
     #endregion
     private void Start()
     {
         pooler = GetComponent<ObjectPooling>();
-        //meleeCol = meleeAttackObject.GetComponent<Collider2D>();
-        //meleeCol.enabled = false;
     }
 
     // Update is called once per frame
@@ -54,6 +52,8 @@ public class CharacterAttack : Character
             if (!isEnemyInProximity)
             {
                 anim.SetBool("AttackRanged", true);
+                if (!canRangedAttackWhileMove)
+                    DisableMovementWhileAttack();
             }
             else
             {
@@ -74,6 +74,10 @@ public class CharacterAttack : Character
         meleeAttackTime = 0;
         anim.SetBool("AttackRanged", false);
         anim.SetBool("AttackMelee", false);
+
+        if (!canRangedAttackWhileMove)
+            EnableMovementAfterAttack();
+
         yield return new WaitForSeconds(AttackDowntime);
         canAttack = true;
     }
@@ -104,6 +108,20 @@ public class CharacterAttack : Character
         projectile.SetDirection(newDirection, transform.rotation);
     }
 
+
+    void DisableMovementWhileAttack()
+    {
+        if (jump.isGrounded)
+        {
+            movement.enabled = false;
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+    }
+
+    void EnableMovementAfterAttack()
+    {
+        movement.enabled = true;
+    }
     #endregion
 
     #region Melee Attack Function

@@ -1194,11 +1194,13 @@ MonoBehaviour:
   isGrounded: 0
   isFlipped: 0
   isDashing: 0
+  canRangedAttackWhileMove: 0
   isEnemyInProximity: 0
   AttackDowntime: 0.5
   bulletSpawner: {fileID: 936560988}
   maxRangedAttackTime: 4
   maxMeleeAttackTime: 3
+  meleeAttackObject: {fileID: 2033059720}
 --- !u!1 &2031420699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,13 +1340,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2033059721}
   - component: {fileID: 2033059722}
+  - component: {fileID: 2033059723}
   m_Layer: 0
   m_Name: MeleeAttackCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2033059721
 Transform:
   m_ObjectHideFlags: 0
@@ -1375,6 +1378,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.66, y: 5}
   m_Direction: 0
+--- !u!114 &2033059723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033059720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eca07fe72271f748be87f89958b8df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2144139449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,7 +1418,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
