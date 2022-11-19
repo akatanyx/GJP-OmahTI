@@ -94,6 +94,11 @@ public class CharacterAttack : Character
         {
             StartCoroutine(AttackCooldown());
         }
+        else if (isEnemyInProximity)
+        {
+            anim.SetBool("AttackRanged", false);
+            anim.SetBool("AttackMelee", true);
+        }
     }
 
     void spawnProjectile(Vector2 spawnPosition)
@@ -114,6 +119,7 @@ public class CharacterAttack : Character
         if (jump.isGrounded)
         {
             movement.enabled = false;
+            //jump.enabled = false;
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
@@ -121,6 +127,7 @@ public class CharacterAttack : Character
     void EnableMovementAfterAttack()
     {
         movement.enabled = true;
+        //jump.enabled = true;
     }
     #endregion
 
