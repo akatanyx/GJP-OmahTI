@@ -8,7 +8,7 @@ public class CharacterFlip : Character
     float scaleX;
     Vector2 facingRight, facingLeft;
     float weaponAngle;
-    MouseAim aim;
+    //MouseAim aim;
     bool isPaused;
 
     private bool IsPointerOverUIObject()
@@ -25,7 +25,7 @@ public class CharacterFlip : Character
         scaleX = transform.localScale.x;
         facingRight = new Vector2(scaleX, transform.localScale.y);
         facingLeft = new Vector2(-scaleX, transform.localScale.y);
-        aim = transform.GetChild(0).GetComponent<MouseAim>();
+        aim = GetComponentInChildren<MouseAim>();
         StartCoroutine(FlipChar());
     }
 

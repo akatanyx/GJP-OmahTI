@@ -17,7 +17,8 @@ public class CharacterAttack : Character
     private int rangedAttackTime;
     [SerializeField]
     private int maxRangedAttackTime = 4;
-    private MouseAim aim;
+    //private MouseAim aim;
+    float aimAngle;
     public ObjectPooling pooler { get; set; }
 
 
@@ -35,6 +36,7 @@ public class CharacterAttack : Character
     private void Start()
     {
         pooler = GetComponent<ObjectPooling>();
+        //aim = GetComponentInChildren<MouseAim>();
     }
 
     // Update is called once per frame
@@ -52,6 +54,9 @@ public class CharacterAttack : Character
             if (!isEnemyInProximity)
             {
                 anim.SetBool("AttackRanged", true);
+                //aimAngle = aim.CurrentAimAngleAbsolute;
+                anim.SetFloat("AimAngle", aim.CurrentAimAngleAbsolute);
+                
                 if (!canRangedAttackWhileMove)
                     DisableMovementWhileAttack();
             }
@@ -90,7 +95,8 @@ public class CharacterAttack : Character
     {
         rangedAttackTime++;
         spawnProjectile(bulletSpawner.transform.position);
-        if(rangedAttackTime == maxRangedAttackTime)
+        anim.SetFloat("AimAngle", aim.CurrentAimAngleAbsolute);
+        if (rangedAttackTime == maxRangedAttackTime)
         {
             StartCoroutine(AttackCooldown());
         }

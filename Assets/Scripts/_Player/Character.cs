@@ -25,6 +25,7 @@ public class Character : MonoBehaviour
     protected CharacterInputManager inputManager;
     protected CharacterFlip flip;
     protected CharacterAttack attack;
+    protected MouseAim aim;
     #endregion
 
     public static Character instance;
@@ -45,6 +46,7 @@ public class Character : MonoBehaviour
         flip = GetComponent<CharacterFlip>();
         attack = GetComponent<CharacterAttack>();
         inputManager = GetComponent<CharacterInputManager>();
+        aim = GetComponentInChildren<MouseAim>();
     }
 
     protected virtual bool CollisionCheck(Vector2 direction, float distance, LayerMask collision)

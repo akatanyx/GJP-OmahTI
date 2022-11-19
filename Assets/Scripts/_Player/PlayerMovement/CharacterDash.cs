@@ -29,8 +29,10 @@ public class CharacterDash : Character
 
         float originalGravity = rb.gravityScale;
         rb.gravityScale = 0f;
-        rb.velocity = new Vector2(movement.horizontalInput * dashingPower, 0f);
-
+        if (flip.isFlipped)
+            rb.velocity = new Vector2(-1 * dashingPower, 0f);
+        else
+            rb.velocity = new Vector2(1 * dashingPower, 0f);
         movement.enabled = false;
         jump.enabled = false;
         attack.enabled = false;
