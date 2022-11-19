@@ -564,6 +564,7 @@ Transform:
   m_Children:
   - {fileID: 966854984}
   - {fileID: 650416374}
+  - {fileID: 970665179}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -826,10 +827,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 893758289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530205d804b9807438efb42866537912, type: 3}
+  m_Script: {fileID: 11500000, guid: 13529ea15f64aaa4b80f098679fcc7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 20
+  maxHealthPoints: 25
   healthPoints: 0
 --- !u!50 &893758295
 Rigidbody2D:
@@ -1062,6 +1063,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 10}
   m_EdgeRadius: 0
+--- !u!1 &970665178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 970665179}
+  - component: {fileID: 970665180}
+  m_Layer: 0
+  m_Name: Bound1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &970665179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970665178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 682394704}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &970665180
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970665178}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 4}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1072922740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,6 +1262,7 @@ GameObject:
   - component: {fileID: 1634464808}
   - component: {fileID: 1634464813}
   - component: {fileID: 1634464809}
+  - component: {fileID: 1634464818}
   - component: {fileID: 1634464805}
   - component: {fileID: 1634464812}
   - component: {fileID: 1634464810}
@@ -1486,6 +1545,20 @@ MonoBehaviour:
   maxRangedAttackTime: 4
   maxMeleeAttackTime: 3
   meleeAttackObject: {fileID: 2033059720}
+--- !u!114 &1634464818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634464804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13529ea15f64aaa4b80f098679fcc7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 25
+  healthPoints: 0
 --- !u!1 &1765140374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,7 +1603,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.51, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1541,7 +1614,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1801687107
 GameObject:
@@ -1829,47 +1902,34 @@ GameObject:
   m_Component:
   - component: {fileID: 2144139452}
   - component: {fileID: 2144139451}
-  - component: {fileID: 2144139450}
   - component: {fileID: 2144139458}
   - component: {fileID: 2144139459}
-  - component: {fileID: 2144139457}
+  - component: {fileID: 2144139450}
   - component: {fileID: 2144139456}
   - component: {fileID: 2144139455}
   - component: {fileID: 2144139453}
   - component: {fileID: 2144139454}
   m_Layer: 8
-  m_Name: EnemyMelee
+  m_Name: EnemyAntiMelee
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &2144139450
-BoxCollider2D:
+--- !u!114 &2144139450
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144139449}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13529ea15f64aaa4b80f098679fcc7de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 25
+  healthPoints: 0
 --- !u!212 &2144139451
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1956,10 +2016,13 @@ MonoBehaviour:
   timeTillDoAction: 0
   enemyCharacter: {fileID: 0}
   hitPlayerWhenClose: 1
-  damageAmount: 0
+  damageAmount: 5
   swipeCollider: {fileID: 0}
   anim: {fileID: 0}
-  swipe: {fileID: 0}
+  swipe: {fileID: 1765140374}
+  canKnockback: 1
+  knockbackForce: 10
+  knockbackTime: 1
 --- !u!114 &2144139454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2016,7 +2079,7 @@ MonoBehaviour:
   maxSpeed: 2
   jumpVerticalForce: 0
   jumpHorizontalForce: 0
-  minDistance: 0.5
+  minDistance: 1
   collidersToTurnAroundOn:
     serializedVersion: 2
     m_Bits: 0
@@ -2039,20 +2102,6 @@ MonoBehaviour:
   playerIsClose: 0
   originalTimeTillDoAction: 1
   timeTillDoAction: 0
---- !u!114 &2144139457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144139449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530205d804b9807438efb42866537912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealthPoints: 20
-  healthPoints: 0
 --- !u!61 &2144139458
 BoxCollider2D:
   m_ObjectHideFlags: 0
