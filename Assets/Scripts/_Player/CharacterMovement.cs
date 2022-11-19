@@ -5,7 +5,9 @@ using UnityEngine;
 public class CharacterMovement : Character
 {
     [SerializeField] float maxSpeed;
-    float currentSpeed, horizontalInput;
+    float currentSpeed;
+    [HideInInspector]
+    public float horizontalInput;
 
     private void FixedUpdate()
     {
@@ -17,11 +19,13 @@ public class CharacterMovement : Character
         if (inputManager.RightHeld())
         {
             horizontalInput = 1;
+            flip.FlipCharacter();
             return true;
         }
         else if (inputManager.LeftHeld())
         {
             horizontalInput = -1;
+            flip.FlipCharacter();
             return true;
         }
         else
@@ -33,10 +37,12 @@ public class CharacterMovement : Character
         if (MovementPressed())
         {
             currentSpeed = horizontalInput * maxSpeed;
+            anim.SetBool("Moving", true);
         }
         else
         {
             currentSpeed = 0;
+            anim.SetBool("Moving", false);
         }
         rb.velocity = new Vector2(currentSpeed, rb.velocity.y);
     }

@@ -7,6 +7,8 @@ public class Character : MonoBehaviour
     #region Character State
     [HideInInspector]
     public bool isGrounded;
+    [HideInInspector]
+    public bool isFlipped;
 
     #endregion
 
@@ -14,10 +16,12 @@ public class Character : MonoBehaviour
     #region Komponen
     protected Rigidbody2D rb;
     protected Collider2D col;
+    protected Animator anim;
+
     protected CharacterMovement movement;
     protected CharacterJump jump;
     protected CharacterInputManager inputManager;
-
+    protected CharacterFlip flip;
     #endregion
 
     private void Awake()
@@ -29,6 +33,11 @@ public class Character : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        anim = GetComponent<Animator>();
+
+        movement = GetComponent<CharacterMovement>();
+        jump = GetComponent<CharacterJump>();
+        flip = GetComponent<CharacterFlip>();
         inputManager = GetComponent<CharacterInputManager>();
     }
 
