@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shoot
+  m_Name: ShootRightTop
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: feb9812bfbf2ab445b7d299f29c2db54, type: 3}
-    - time: 0.26666668
-      value: {fileID: 21300000, guid: 019ca23a399a456409fe3eaee59c20a3, type: 3}
+      value: {fileID: 21300000, guid: e348c741c02c6204bb31d18ac6878787, type: 3}
     - time: 0.5
       value: {fileID: 21300000, guid: e348c741c02c6204bb31d18ac6878787, type: 3}
     attribute: m_Sprite
@@ -44,8 +42,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: feb9812bfbf2ab445b7d299f29c2db54, type: 3}
-    - {fileID: 21300000, guid: 019ca23a399a456409fe3eaee59c20a3, type: 3}
+    - {fileID: 21300000, guid: e348c741c02c6204bb31d18ac6878787, type: 3}
     - {fileID: 21300000, guid: e348c741c02c6204bb31d18ac6878787, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -72,7 +69,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.13333334
+  - time: 0.083333336
     functionName: SpawnBullet
     data: 
     objectReferenceParameter: {fileID: 0}

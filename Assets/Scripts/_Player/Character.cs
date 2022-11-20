@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
     public bool isGrounded;
     [HideInInspector]
     public bool isFlipped;
-    //[HideInInspector]
+    [HideInInspector]
     public bool isDashing;
 
     #endregion
@@ -19,11 +19,15 @@ public class Character : MonoBehaviour
     protected Rigidbody2D rb;
     protected Collider2D col;
     protected Animator anim;
+    protected SpriteRenderer sprite;
 
     protected CharacterMovement movement;
     protected CharacterJump jump;
     protected CharacterInputManager inputManager;
     protected CharacterFlip flip;
+    protected CharacterAttack attack;
+    protected CharacterDash dash;
+    protected MouseAim aim;
     #endregion
 
     public static Character instance;
@@ -38,11 +42,15 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
 
         movement = GetComponent<CharacterMovement>();
         jump = GetComponent<CharacterJump>();
         flip = GetComponent<CharacterFlip>();
+        attack = GetComponent<CharacterAttack>();
+        dash = GetComponent<CharacterDash>();
         inputManager = GetComponent<CharacterInputManager>();
+        aim = GetComponentInChildren<MouseAim>();
     }
 
     protected virtual bool CollisionCheck(Vector2 direction, float distance, LayerMask collision)
