@@ -19,6 +19,7 @@ public class Character : MonoBehaviour
     protected Rigidbody2D rb;
     protected Collider2D col;
     protected Animator anim;
+    protected SpriteRenderer sprite;
 
     protected CharacterMovement movement;
     protected CharacterJump jump;
@@ -40,6 +41,7 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
 
         movement = GetComponent<CharacterMovement>();
         jump = GetComponent<CharacterJump>();

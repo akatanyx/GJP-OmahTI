@@ -715,7 +715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &893758290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1376,7 +1376,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: c36a07170e04dd541b6022445d9c7805, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1433,7 +1433,7 @@ MonoBehaviour:
   isGrounded: 0
   isFlipped: 0
   isDashing: 0
-  jumpForce: 500
+  jumpForce: 10
   distanceToCollider: 0.1
   collisionLayer:
     serializedVersion: 2
@@ -1862,6 +1862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eca07fe72271f748be87f89958b8df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 2
+  canKnockback: 0
+  knockbackForce: 50
 --- !u!1 &2073470425
 GameObject:
   m_ObjectHideFlags: 0

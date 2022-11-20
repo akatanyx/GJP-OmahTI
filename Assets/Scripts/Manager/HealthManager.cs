@@ -26,13 +26,17 @@ public class HealthManager : MonoBehaviour
         
     //}
 
-    public void DealDamage(int damage)
+    public void DealDamage(int damage, bool canKnockback = false, float knockbackForce = 0)
     {
         healthPoints -= damage;
         StartCoroutine(Blinking());
         if (healthPoints <= 0)
         {
             StartCoroutine(Dying());
+        }
+        if (canKnockback)
+        {
+            Knockback(knockbackForce);
         }
     }
 
@@ -66,5 +70,40 @@ public class HealthManager : MonoBehaviour
         }
         yield return null;
 
+    }
+
+    void Knockback(float knockbackForce)
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        //CharacterMovement enemyMovement = GetComponent<CharacterMovement>();
+
+        //Matikan Movement Karakter biar bisa knockback karena bermasalah dengan fixedupdate
+        StartCoroutine(StartKnockback());
+
+        //Kalkulasi
+        //Vector2 direction = (transform.position - transform.position);
+        Vector2 direction = new Vector2 (-transform.localScale.x, 0);
+        direction = direction.normalized * knockbackForce;
+        Debug.Log(direction + " " + rb);
+        rb.AddForce(direction, ForceMode2D.Impulse);
+    }
+
+    IEnumerator StartKnockback()
+    {
+        if(GetComponent<CharacterMovement>() != null)
+        {
+            CharacterMovement movement = GetComponent<CharacterMovement>();
+            movement.enabled = false;
+            yield return new WaitForSeconds(0.5f);
+            movement.enabled = true;
+        }
+        else
+        {
+            EnemyMovement movement = GetComponent<EnemyMovement>();
+            movement.enabled = false;
+            yield return new WaitForSeconds(.5f);
+            movement.enabled = true;
+        }
+        
     }
 }

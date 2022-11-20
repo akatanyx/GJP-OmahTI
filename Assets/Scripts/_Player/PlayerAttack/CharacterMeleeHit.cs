@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CharacterMeleeHit : MonoBehaviour
 {
+    [SerializeField] int damage;
+    [SerializeField] bool canKnockback;
+    [SerializeField] float knockbackForce;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
             Debug.Log("hit");
+            collision.GetComponent<HealthManager>().DealDamage(damage, canKnockback, knockbackForce);
         }
     }
 }

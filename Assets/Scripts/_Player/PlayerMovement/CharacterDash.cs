@@ -17,6 +17,7 @@ public class CharacterDash : Character
         if (inputManager.DashPressed() && canDash && (inputManager.LeftHeld() || inputManager.RightHeld()))
         {
             StartCoroutine(TriggerDash());
+            StartCoroutine(IFrames());
         }
     }
 
@@ -59,5 +60,14 @@ public class CharacterDash : Character
         yield return new WaitForSeconds(dashingCooldown);
 
         canDash = true;
+    }
+
+    IEnumerator IFrames()
+    {
+        Physics2D.IgnoreLayerCollision(7, 8, true);
+        sprite.color = new Color(1, 1, 1, .5f);
+        yield return new WaitForSeconds(dashingTime);
+        sprite.color = Color.white;
+        Physics2D.IgnoreLayerCollision(7, 8, false);
     }
 }

@@ -53,20 +53,8 @@ public class AIMeleeAttack : AIManagers
         if (collision.gameObject.tag == "Player" && !hit)
         {
             hit = true;
-            collision.GetComponent<HealthManager>().DealDamage(damageAmount);
-            if (canKnockback)
-            {
-                Rigidbody2D enemyRB = collision.GetComponent<Rigidbody2D>();
-                CharacterMovement enemyMovement = collision.GetComponent<CharacterMovement>();
-
-                //Matikan Movement Karakter biar bisa knockback karena bermasalah dengan fixedupdate
-                StartCoroutine(Knockback(enemyMovement));
-
-                //Kalkulasi
-                Vector2 direction = (collision.transform.position - transform.position);
-                direction = direction.normalized * knockbackForce;
-                enemyRB.AddForce(direction, ForceMode2D.Impulse);
-            }
+            collision.GetComponent<HealthManager>().DealDamage(damageAmount, canKnockback, knockbackForce);
+            
         }
     }
 
@@ -94,12 +82,7 @@ public class AIMeleeAttack : AIManagers
         //Invoke("CancelSwipe", anim.GetCurrentAnimatorStateInfo(0).length);
     }
 
-    IEnumerator Knockback(CharacterMovement movement)
-    {
-        movement.enabled = false;
-        yield return new WaitForSeconds(knockbackTime);
-        movement.enabled = true;
-    }
+    
 
     //Manages the animation and disables the swipe game object from the scene until the Enemy melee attacks again
     protected virtual void CancelSwipe()
