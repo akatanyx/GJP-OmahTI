@@ -36,7 +36,7 @@ public class AIMeleeAttack : AIManagers
     {
         base.Initialization();
         swipe = transform.GetChild(0).gameObject;
-        //anim = swipe.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         swipeCollider = swipe.GetComponent<Collider2D>();
         //playerHealth = player.GetComponent<PlayerHealth>();
         swipe.SetActive(false);
@@ -67,12 +67,13 @@ public class AIMeleeAttack : AIManagers
             return;
         }
         timeTillDoAction -= Time.deltaTime;
-        swipe.SetActive(false);
+        //swipe.SetActive(false);
         if (timeTillDoAction <= 0)
         {
-            swipe.SetActive(true);
+            
             //GetComponent<Animator>().SetTrigger("Attack");
             //anim.SetBool("Attack", true);
+            anim.SetTrigger("Attack");
             timeTillDoAction = originalTimeTillDoAction;
             if (hit)
             {
@@ -81,7 +82,7 @@ public class AIMeleeAttack : AIManagers
         }
         else
         {
-            CancelSwipe();
+            //CancelSwipe();
         }
         //Invoke("CancelSwipe", anim.GetCurrentAnimatorStateInfo(0).length);
     }
@@ -98,6 +99,15 @@ public class AIMeleeAttack : AIManagers
     protected virtual void CancelSwipe()
     {
         //anim.SetBool("Attack", false);
+        swipe.SetActive(false);
+    }
+
+    public void ShowHitCollider()
+    {
+        swipe.SetActive(true);
+    }
+    public void UnShowHitCollider()
+    {
         swipe.SetActive(false);
     }
 }
