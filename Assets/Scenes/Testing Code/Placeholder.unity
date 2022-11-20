@@ -348,7 +348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &247782258
 Transform:
   m_ObjectHideFlags: 0
@@ -1446,7 +1446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &893758290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2006,7 +2006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1539296231
 Transform:
   m_ObjectHideFlags: 0
@@ -2600,6 +2600,7 @@ MonoBehaviour:
   isGrounded: 0
   isFlipped: 0
   isDashing: 0
+  isAttacking: 0
   canRangedAttackWhileMove: 0
   isEnemyInProximity: 0
   AttackDowntime: 0.5

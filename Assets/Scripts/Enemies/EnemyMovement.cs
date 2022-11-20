@@ -59,6 +59,8 @@ public class EnemyMovement : AIManagers
     protected float originalWaitTime = .1f;
     protected float currentWaitTime;
     protected float currentSpeed;
+
+    float initialFlyingPositionY;
     //void Start()
     //{
     //    Initialization();
@@ -73,6 +75,7 @@ public class EnemyMovement : AIManagers
         }
         currentWaitTime = originalWaitTime;
         timeTillDoAction = originalTimeTillDoAction;
+        initialFlyingPositionY = transform.position.y;
         //Ensures the scene is loaded before the Enemy moves
         Invoke("Spawning", .01f);
     }
@@ -160,10 +163,20 @@ public class EnemyMovement : AIManagers
             {
                 tooClose = false;
             }
+
+
+
             //Handles moving the Enemy towards the Player; if the tooClose bool is true, it stops movement here too
             if (!enemyCharacter.facingLeft)
             {
                 Vector2 distanceToPlayer = (new Vector3(transform.position.x - 2, transform.position.y) - player.transform.position).normalized * minDistance + player.transform.position;
+
+
+                if (type == MovementType.Flying && (GetComponent<AIMeleeAttack>() == null || !GetComponent<AIMeleeAttack>().isActiveAndEnabled))
+                {
+                    distanceToPlayer = new Vector2(distanceToPlayer.x, initialFlyingPositionY);
+                }
+
                 transform.position = Vector2.MoveTowards(transform.position, distanceToPlayer, currentSpeed * Time.deltaTime);
                 if (tooClose)
                 {
@@ -174,6 +187,13 @@ public class EnemyMovement : AIManagers
             else
             {
                 Vector2 distanceToPlayer = (new Vector3(transform.position.x + 2, transform.position.y) - player.transform.position).normalized * minDistance + player.transform.position;
+
+
+                if (type == MovementType.Flying && (GetComponent<AIMeleeAttack>() == null || !GetComponent<AIMeleeAttack>().isActiveAndEnabled))
+                {
+                    distanceToPlayer = new Vector2(distanceToPlayer.x, initialFlyingPositionY);
+                }
+
                 transform.position = Vector2.MoveTowards(transform.position, distanceToPlayer, -currentSpeed * Time.deltaTime);
                 if (tooClose)
                 {
