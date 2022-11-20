@@ -6,6 +6,7 @@ public class CharacterMeleeHit : MonoBehaviour
 {
     [SerializeField] int damage;
     [SerializeField] bool canKnockback;
+
     [SerializeField] float knockbackForce;
     private void OnTriggerEnter2D(Collider2D collision)
     {
