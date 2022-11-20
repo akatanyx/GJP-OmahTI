@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack
+  m_Name: Shoot
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,19 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 8259960332013780080, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
-    - time: 0.083333336
-      value: {fileID: -2867972921025208598, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
+      value: {fileID: -5033958015467302538, guid: ffa9a705295bf7d4c89019ecf8a1e67c, type: 3}
     - time: 0.16666667
-      value: {fileID: -7832592693144282249, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
-    - time: 0.25
-      value: {fileID: 5524573667689162246, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
+      value: {fileID: 7592535569128515523, guid: ffa9a705295bf7d4c89019ecf8a1e67c, type: 3}
     - time: 0.33333334
-      value: {fileID: -7832592693144282249, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
-    - time: 0.41666666
-      value: {fileID: -2867972921025208598, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
+      value: {fileID: 2298201397706995176, guid: ffa9a705295bf7d4c89019ecf8a1e67c, type: 3}
     - time: 0.5
-      value: {fileID: 8259960332013780080, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
+      value: {fileID: -2588499463863470472, guid: ffa9a705295bf7d4c89019ecf8a1e67c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -52,13 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 8259960332013780080, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
-    - {fileID: -2867972921025208598, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
-    - {fileID: -7832592693144282249, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
-    - {fileID: 5524573667689162246, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
-    - {fileID: -7832592693144282249, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
-    - {fileID: -2867972921025208598, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
-    - {fileID: 8259960332013780080, guid: 3f8e825840eb3164c8532fb8f08f0cb4, type: 3}
+    - {fileID: -5033958015467302538, guid: ffa9a705295bf7d4c89019ecf8a1e67c, type: 3}
+    - {fileID: 7592535569128515523, guid: ffa9a705295bf7d4c89019ecf8a1e67c, type: 3}
+    - {fileID: 2298201397706995176, guid: ffa9a705295bf7d4c89019ecf8a1e67c, type: 3}
+    - {fileID: -2588499463863470472, guid: ffa9a705295bf7d4c89019ecf8a1e67c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -85,14 +76,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.16666667
-    functionName: ShowHitCollider
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.41666666
-    functionName: UnShowHitCollider
+    functionName: ShootBullet
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

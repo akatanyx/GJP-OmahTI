@@ -176,7 +176,6 @@ public class EnemyMovement : AIManagers
                 {
                     distanceToPlayer = new Vector2(distanceToPlayer.x, initialFlyingPositionY);
                 }
-
                 transform.position = Vector2.MoveTowards(transform.position, distanceToPlayer, currentSpeed * Time.deltaTime);
                 if (tooClose)
                 {

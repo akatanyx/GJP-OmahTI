@@ -19,6 +19,7 @@ public class EnemyCharacter : MonoBehaviour
     protected Collider2D playerCollider;
     protected EnemyMovement enemyMovement;
     protected HealthManager health;
+    protected Animator anim;
     //[SerializeField]protected EnemyCharacter enemyCharacter;
 
     protected int rayHitNumber;
@@ -38,6 +39,7 @@ public class EnemyCharacter : MonoBehaviour
         player = FindObjectOfType<Character>().gameObject;
         playerCollider = player.GetComponent<Collider2D>();
         health = GetComponent<HealthManager>();
+        anim = GetComponent<Animator>();
         //enemyCharacter = GetComponent<EnemyCharacter>();
     }
 

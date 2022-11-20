@@ -14,7 +14,7 @@ public class AIMeleeAttack : AIManagers
     //A collider that gets adjusted through an animation to determine if the Player is inside that collider
     [SerializeField] protected Collider2D swipeCollider;
     //The animation that needs to play when attacking
-    [SerializeField] protected Animator anim;
+    //[SerializeField] protected Animator anim;
     //The game object that is the physical attack; this game object appears as the slashing sprites from the animation
     [SerializeField]protected GameObject swipe;
     //A quick reference to the PlayerHealth script to deal damage

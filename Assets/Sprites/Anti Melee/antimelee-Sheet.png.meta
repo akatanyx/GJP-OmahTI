@@ -1,34 +1,25 @@
 fileFormatVersion: 2
-guid: ea6e137173af87440a5824f6d38ca3e2
+guid: 47733394d7f4ad04ebf8f46125577302
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1524988886563149441
-    second: drone_antirange-Sheet_0
+      213: 4010640029213921452
+    second: antimelee-Sheet_0
   - first:
-      213: 5246716084790311213
-    second: drone_antirange-Sheet_1
+      213: 831873698637707080
+    second: antimelee-Sheet_1
   - first:
-      213: -3322714762967204108
-    second: drone_antirange-Sheet_2
+      213: 2242463199539780976
+    second: antimelee-Sheet_2
   - first:
-      213: -4780024567194709454
-    second: drone_antirange-Sheet_3
+      213: -8888729394573206854
+    second: antimelee-Sheet_3
   - first:
-      213: 5584651604502318730
-    second: drone_antirange-Sheet_4
+      213: 3478703484365160946
+    second: antimelee-Sheet_4
   - first:
-      213: -159602448041949058
-    second: drone_antirange-Sheet_5
-  - first:
-      213: -6966765252971267696
-    second: drone_antirange-Sheet_6
-  - first:
-      213: 2949594983257071090
-    second: drone_antirange-Sheet_7
-  - first:
-      213: -3764502563789473495
-    second: drone_antirange-Sheet_8
+      213: -8875555422102341765
+    second: antimelee-Sheet_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: drone_antirange-Sheet_0
+      name: antimelee-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,41 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f792cf9ffa626dae0800000000000000
-      internalID: -1524988886563149441
+      spriteID: ca012477bd7a8a730800000000000000
+      internalID: 4010640029213921452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: drone_antirange-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2931471b7410d840800000000000000
-      internalID: 5246716084790311213
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: drone_antirange-Sheet_2
+      name: antimelee-Sheet_1
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,41 +144,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4feb46f078853e1d0800000000000000
-      internalID: -3322714762967204108
+      spriteID: 8477a41b8b86b8b00800000000000000
+      internalID: 831873698637707080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: drone_antirange-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23218b65bf0f9adb0800000000000000
-      internalID: -4780024567194709454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: drone_antirange-Sheet_4
+      name: antimelee-Sheet_2
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,41 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8e0da8ab0ba08d40800000000000000
-      internalID: 5584651604502318730
+      spriteID: 07d547e1664de1f10800000000000000
+      internalID: 2242463199539780976
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: drone_antirange-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e784d2b4b6af8cdf0800000000000000
-      internalID: -159602448041949058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: drone_antirange-Sheet_6
+      name: antimelee-Sheet_3
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,41 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 099fc17f9e3115f90800000000000000
-      internalID: -6966765252971267696
+      spriteID: aba14ebc5b3e4a480800000000000000
+      internalID: -8888729394573206854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: drone_antirange-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2fddf4872011fe820800000000000000
-      internalID: 2949594983257071090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: drone_antirange-Sheet_8
+      name: antimelee-Sheet_4
       rect:
         serializedVersion: 2
         x: 512
         y: 0
-        width: 64
-        height: 64
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,8 +207,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 929f7490ddcc1cbc0800000000000000
-      internalID: -3764502563789473495
+      spriteID: 2f1cf785366d64030800000000000000
+      internalID: 3478703484365160946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: antimelee-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b773c494e51b3d480800000000000000
+      internalID: -8875555422102341765
       vertices: []
       indices: 
       edges: []
