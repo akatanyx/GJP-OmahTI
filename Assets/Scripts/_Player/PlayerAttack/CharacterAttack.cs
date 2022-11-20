@@ -15,6 +15,7 @@ public class CharacterAttack : Character
     #region Ranged Attack
 
     public GameObject bulletSpawner;
+    Vector2 bulletSpawnerRealPos;
     private int rangedAttackTime;
     [SerializeField]
     private int maxRangedAttackTime = 4;
@@ -38,6 +39,7 @@ public class CharacterAttack : Character
     {
         pooler = GetComponent<ObjectPooling>();
         meleeAttackObject.SetActive(false);
+        //bulletSpawnerRealPos = new Vector2(bulletSpawner.transform.position.x+0.622f, bulletSpawner.transform.position.y+0.319f);
         //aim = GetComponentInChildren<MouseAim>();
     }
 
@@ -81,14 +83,19 @@ public class CharacterAttack : Character
         rangedAttackTime = 0;
         meleeAttackTime = 0;
         anim.SetBool("AttackRanged", false);
-        anim.SetBool("Reloading", true);
         anim.SetBool("AttackMelee", false);
+        int flipreload = Random.Range(0, 3);
 
+        if (flipreload > 1)
+            anim.SetBool("Reloading", true);
+        else
+            anim.SetBool("Flipping", true);
         if (!canRangedAttackWhileMove)
             EnableMovementAfterAttack();
 
         yield return new WaitForSeconds(AttackDowntime);
-        anim.SetBool("Reloading", false);
+        anim.SetBool("Reloading", false); 
+        anim.SetBool("Flipping", false);
         canAttack = true;
     }
 
