@@ -27,8 +27,8 @@ public class EnemyMovement : AIManagers
     [SerializeField]
     protected float timeTillMaxSpeed;
     //How fast the Enemy can possibly go
-    [SerializeField]
-    protected float maxSpeed;
+    //[SerializeField]
+    public float maxSpeed;
     //How high the Enemy can jump if allowed to jump
     [SerializeField]
     protected float jumpVerticalForce;
@@ -36,8 +36,8 @@ public class EnemyMovement : AIManagers
     [SerializeField]
     protected float jumpHorizontalForce;
     //How close the Enemy can get to the Player before stopping
-    [SerializeField]
-    protected float minDistance;
+    //[SerializeField]
+    public float minDistance;
     //What layers the Enemy can turn around on if it runs into a wall
     [SerializeField]
     protected LayerMask collidersToTurnAroundOn;

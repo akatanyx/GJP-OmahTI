@@ -54,7 +54,7 @@ public class AIMeleeAttack : AIManagers
         {
             hit = true;
             collision.GetComponent<HealthManager>().DealDamage(damageAmount, tag, canKnockback, knockbackForce);
-            
+            StartCoroutine(DisableMovementAfterAttack());
         }
     }
 
@@ -79,15 +79,25 @@ public class AIMeleeAttack : AIManagers
                 hit = false;
             }
         }
+        else
+        {
+            CancelSwipe();
+        }
         //Invoke("CancelSwipe", anim.GetCurrentAnimatorStateInfo(0).length);
     }
 
-    
+    IEnumerator DisableMovementAfterAttack()
+    {
+        float initialSpeed = enemyMovement.maxSpeed;
+        enemyMovement.maxSpeed = 0;
+        yield return new WaitForSeconds(originalTimeTillDoAction);
+        enemyMovement.maxSpeed = initialSpeed;
+    }
 
     //Manages the animation and disables the swipe game object from the scene until the Enemy melee attacks again
     protected virtual void CancelSwipe()
     {
-        anim.SetBool("Attack", false);
+        //anim.SetBool("Attack", false);
         swipe.SetActive(false);
     }
 }

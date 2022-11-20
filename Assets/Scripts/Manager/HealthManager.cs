@@ -16,9 +16,9 @@ public class HealthManager : MonoBehaviour
     public characterType charType;
     Collider2D col;
     Rigidbody2D rb;
-    SpriteRenderer sprite;
+    public SpriteRenderer sprite;
     bool flashing;
-    Color flash;
+    Color flash, defaultColor;
     
     void Start ()
     {
@@ -26,7 +26,8 @@ public class HealthManager : MonoBehaviour
         col = GetComponent<Collider2D>();
         sprite = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        flash = new Color(1, 1, 1, 0.3f);
+        flash = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 0.3f);
+        //defaultColor = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
     }
 
     // Update is called once per frame
@@ -55,7 +56,7 @@ public class HealthManager : MonoBehaviour
             }
             if (canKnockback)
             {
-                Knockback(knockbackForce);
+                StartCoroutine(StartKnockback(knockbackForce));
             }
         }
     }
@@ -69,6 +70,7 @@ public class HealthManager : MonoBehaviour
             sprite.color = new Color(0, 0, 0, i);
         }
         yield return new WaitForSeconds(0.1f);
+        col.isTrigger = false;
         rb.gravityScale = 2;
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
@@ -94,35 +96,39 @@ public class HealthManager : MonoBehaviour
 
     }
 
-    void Knockback(float knockbackForce)
-    {
+    //void Knockback(float knockbackForce)
+    //{
         
-        //CharacterMovement enemyMovement = GetComponent<CharacterMovement>();
+    //    //CharacterMovement enemyMovement = GetComponent<CharacterMovement>();
 
-        //Matikan Movement Karakter biar bisa knockback karena bermasalah dengan fixedupdate
-        StartCoroutine(StartKnockback());
+    //    //Matikan Movement Karakter biar bisa knockback karena bermasalah dengan fixedupdate
+    //    //StartCoroutine(StartKnockback(knockbackForce));
 
-        //Kalkulasi
-        //Vector2 direction = (transform.position - transform.position);
-        Vector2 direction = new Vector2 (-transform.localScale.x, 0);
-        direction = direction.normalized * knockbackForce;
-        Debug.Log(direction + " " + rb);
-        rb.AddForce(direction, ForceMode2D.Impulse);
-    }
+    //    //Kalkulasi
+    //    //Vector2 direction = (transform.position - transform.position);
+    //}
 
-    IEnumerator StartKnockback()
+    IEnumerator StartKnockback(float knockbackForce)
     {
         if(GetComponent<CharacterMovement>() != null)
         {
             CharacterMovement movement = GetComponent<CharacterMovement>();
             movement.enabled = false;
+            rb.velocity = Vector2.zero;
+            Vector2 direction = new Vector2(-transform.localScale.x, 0);
+            direction = direction.normalized * knockbackForce;
+            rb.AddForce(direction, ForceMode2D.Impulse);
             yield return new WaitForSeconds(0.5f);
+            Debug.Log("tes0");
             movement.enabled = true;
         }
         else
         {
             EnemyMovement movement = GetComponent<EnemyMovement>();
             movement.enabled = false;
+            Vector2 direction = new Vector2(-transform.localScale.x, 0);
+            direction = direction.normalized * knockbackForce;
+            rb.AddForce(direction, ForceMode2D.Impulse);
             yield return new WaitForSeconds(.5f);
             movement.enabled = true;
         }
