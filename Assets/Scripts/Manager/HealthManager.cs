@@ -36,7 +36,7 @@ public class HealthManager : MonoBehaviour
         
     //}
 
-    public void DealDamage(int damage, string damageType, bool canKnockback = false, float knockbackForce = 0)
+    public void DealDamage(int damage, string damageType, bool canKnockback = false, float knockbackForce = 0, float localScale = 1)
     {
         if(damageType == "Melee" && charType == characterType.immuneMelee)
         {
@@ -56,7 +56,7 @@ public class HealthManager : MonoBehaviour
             }
             if (canKnockback)
             {
-                StartCoroutine(StartKnockback(knockbackForce));
+                StartCoroutine(StartKnockback(knockbackForce, localScale));
             }
         }
     }
@@ -108,14 +108,14 @@ public class HealthManager : MonoBehaviour
     //    //Vector2 direction = (transform.position - transform.position);
     //}
 
-    IEnumerator StartKnockback(float knockbackForce)
+    IEnumerator StartKnockback(float knockbackForce, float localScale)
     {
         if(GetComponent<CharacterMovement>() != null)
         {
             CharacterMovement movement = GetComponent<CharacterMovement>();
             movement.enabled = false;
             rb.velocity = Vector2.zero;
-            Vector2 direction = new Vector2(-transform.localScale.x, 0);
+            Vector2 direction = new Vector2(-localScale, 0);
             direction = direction.normalized * knockbackForce;
             rb.AddForce(direction, ForceMode2D.Impulse);
             yield return new WaitForSeconds(0.5f);

@@ -53,7 +53,7 @@ public class AIMeleeAttack : AIManagers
         if (collision.gameObject.tag == "Player" && !hit)
         {
             hit = true;
-            collision.GetComponent<HealthManager>().DealDamage(damageAmount, tag, canKnockback, knockbackForce);
+            collision.GetComponent<HealthManager>().DealDamage(damageAmount, tag, canKnockback, knockbackForce, -transform.localScale.x);
             StartCoroutine(DisableMovementAfterAttack());
         }
     }

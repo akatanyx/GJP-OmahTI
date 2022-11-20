@@ -12,7 +12,7 @@ public class CharacterMeleeHit : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<HealthManager>().DealDamage(damage, tag, canKnockback, knockbackForce);
+            collision.GetComponent<HealthManager>().DealDamage(damage, tag, canKnockback, knockbackForce, transform.localScale.x);
         }
     }
 }
