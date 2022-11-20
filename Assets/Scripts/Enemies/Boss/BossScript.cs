@@ -31,8 +31,8 @@ public class BossScript : EnemyCharacter
             health.charType = HealthManager.characterType.immuneRanged;
             meleeAttack.enabled = false;
             rangedAttack.enabled = true;
-            health.sprite.color = Color.green;
-            enemyMovement.minDistance = 5f;
+            //health.sprite.color = Color.green;
+            enemyMovement.minDistance = 3f;
             enemyMovement.maxSpeed = rangedSpeed;
             isRanged = false;
         }
@@ -41,8 +41,8 @@ public class BossScript : EnemyCharacter
             health.charType = HealthManager.characterType.immuneMelee;
             meleeAttack.enabled = true;
             rangedAttack.enabled = false;
-            health.sprite.color = Color.red;
-            enemyMovement.minDistance = 1f;
+            //health.sprite.color = Color.red;
+            enemyMovement.minDistance = .5f;
             enemyMovement.maxSpeed = meleeSpeed;
             isRanged = true;
         }
