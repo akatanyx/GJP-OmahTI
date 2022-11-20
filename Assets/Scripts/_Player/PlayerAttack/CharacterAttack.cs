@@ -81,12 +81,14 @@ public class CharacterAttack : Character
         rangedAttackTime = 0;
         meleeAttackTime = 0;
         anim.SetBool("AttackRanged", false);
+        anim.SetBool("Reloading", true);
         anim.SetBool("AttackMelee", false);
 
         if (!canRangedAttackWhileMove)
             EnableMovementAfterAttack();
 
         yield return new WaitForSeconds(AttackDowntime);
+        anim.SetBool("Reloading", false);
         canAttack = true;
     }
 
@@ -148,6 +150,8 @@ public class CharacterAttack : Character
         meleeAttackTime++;
         if (meleeAttackTime == maxMeleeAttackTime)
         {
+            anim.SetTrigger("Slash 2");
+            Debug.Log("Slash 2");
             StartCoroutine(AttackCooldown());
         }
     }
