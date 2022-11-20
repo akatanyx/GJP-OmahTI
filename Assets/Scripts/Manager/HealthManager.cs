@@ -15,6 +15,7 @@ public class HealthManager : MonoBehaviour
     }
     public characterType charType;
     Collider2D col;
+    Rigidbody2D rb;
     SpriteRenderer sprite;
     bool flashing;
     Color flash;
@@ -24,6 +25,7 @@ public class HealthManager : MonoBehaviour
         healthPoints = maxHealthPoints;
         col = GetComponent<Collider2D>();
         sprite = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
         flash = new Color(1, 1, 1, 0.3f);
     }
 
@@ -60,12 +62,14 @@ public class HealthManager : MonoBehaviour
 
     IEnumerator Dying()
     {
-        col.enabled = false;
+        Physics2D.IgnoreLayerCollision(7, 8, true);
         for (float i = 1; i >= 0; i -= Time.deltaTime)
         {
             // set color with i as alpha
             sprite.color = new Color(0, 0, 0, i);
         }
+        yield return new WaitForSeconds(0.1f);
+        rb.gravityScale = 2;
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
@@ -92,7 +96,7 @@ public class HealthManager : MonoBehaviour
 
     void Knockback(float knockbackForce)
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        
         //CharacterMovement enemyMovement = GetComponent<CharacterMovement>();
 
         //Matikan Movement Karakter biar bisa knockback karena bermasalah dengan fixedupdate

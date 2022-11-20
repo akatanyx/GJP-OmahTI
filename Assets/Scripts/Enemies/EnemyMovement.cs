@@ -89,7 +89,10 @@ public class EnemyMovement : AIManagers
             FollowPlayer();
             HandleWait();
         }
-       
+        else
+        {
+            enabled = false;
+        }
     }
 
     //Handles movement for Normal and Flying enemies

@@ -65,9 +65,11 @@ public class CharacterDash : Character
     IEnumerator IFrames()
     {
         Physics2D.IgnoreLayerCollision(7, 8, true);
+        Physics2D.IgnoreLayerCollision(7, 9, true);
         sprite.color = new Color(1, 1, 1, .5f);
         yield return new WaitForSeconds(dashingTime);
         sprite.color = Color.white;
         Physics2D.IgnoreLayerCollision(7, 8, false);
+        Physics2D.IgnoreLayerCollision(7, 9, false);
     }
 }
