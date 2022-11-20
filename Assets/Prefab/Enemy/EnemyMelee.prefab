@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13529ea15f64aaa4b80f098679fcc7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 250
+  maxHealthPoints: 15
   healthPoints: 0
   charType: 0
   sprite: {fileID: 0}
@@ -298,7 +298,6 @@ MonoBehaviour:
   hitPlayerWhenClose: 1
   damageAmount: 5
   swipeCollider: {fileID: 0}
-  anim: {fileID: 0}
   swipe: {fileID: 3153932396094347192}
   canKnockback: 0
   knockbackForce: 10
