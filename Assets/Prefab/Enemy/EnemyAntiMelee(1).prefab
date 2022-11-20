@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13529ea15f64aaa4b80f098679fcc7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 15
+  maxHealthPoints: 10
   healthPoints: 0
   charType: 0
   sprite: {fileID: 0}
@@ -458,7 +458,7 @@ MonoBehaviour:
   timeTillDoAction: 0
   enemyCharacter: {fileID: 0}
   hitPlayerWhenClose: 1
-  damageAmount: 5
+  damageAmount: 2
   swipeCollider: {fileID: 0}
   swipe: {fileID: 1576060061646407111}
   canKnockback: 1
@@ -485,8 +485,8 @@ MonoBehaviour:
   enemyCharacter: {fileID: 0}
   type: 1
   followPlayerIfFound: 1
-  distance: 10
-  radius: 10
+  distance: 5
+  radius: 5
   detectorOffset: {x: -5, y: 0}
   layer:
     serializedVersion: 2
