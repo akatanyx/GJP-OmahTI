@@ -11,8 +11,7 @@ public class CharacterMeleeHit : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("hit");
-            collision.GetComponent<HealthManager>().DealDamage(damage, canKnockback, knockbackForce);
+            collision.GetComponent<HealthManager>().DealDamage(damage, tag, canKnockback, knockbackForce);
         }
     }
 }

@@ -7,12 +7,19 @@ public class HealthManager : MonoBehaviour
     public int maxHealthPoints;
     //[HideInInspector] 
     public int healthPoints;
+    public enum characterType
+    {
+        basic,
+        immuneMelee,
+        immuneRanged
+    }
+    public characterType charType;
     Collider2D col;
     SpriteRenderer sprite;
     bool flashing;
     Color flash;
-
-    void Start()
+    
+    void Start ()
     {
         healthPoints = maxHealthPoints;
         col = GetComponent<Collider2D>();
@@ -26,17 +33,28 @@ public class HealthManager : MonoBehaviour
         
     //}
 
-    public void DealDamage(int damage, bool canKnockback = false, float knockbackForce = 0)
+    public void DealDamage(int damage, string damageType, bool canKnockback = false, float knockbackForce = 0)
     {
-        healthPoints -= damage;
-        StartCoroutine(Blinking());
-        if (healthPoints <= 0)
+        if(damageType == "Melee" && charType == characterType.immuneMelee)
         {
-            StartCoroutine(Dying());
+            return;
         }
-        if (canKnockback)
+        else if(damageType == "Ranged" && charType == characterType.immuneRanged)
         {
-            Knockback(knockbackForce);
+            return;
+        }
+        else
+        {
+            healthPoints -= damage;
+            StartCoroutine(Blinking());
+            if (healthPoints <= 0)
+            {
+                StartCoroutine(Dying());
+            }
+            if (canKnockback)
+            {
+                Knockback(knockbackForce);
+            }
         }
     }
 

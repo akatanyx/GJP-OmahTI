@@ -54,7 +54,7 @@ public class Projectile : MonoBehaviour
         {
             //Debug.Log("Hit " + enType);
             returnToPool.Return();
-            collision.GetComponent<HealthManager>().DealDamage(damage);
+            collision.GetComponent<HealthManager>().DealDamage(damage, tag);
         }
     }
 }
