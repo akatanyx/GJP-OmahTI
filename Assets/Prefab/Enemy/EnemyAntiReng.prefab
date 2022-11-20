@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 844600085}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: BulletSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13529ea15f64aaa4b80f098679fcc7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 25
+  maxHealthPoints: 15
   healthPoints: 0
   charType: 2
   sprite: {fileID: 0}
@@ -290,7 +290,7 @@ MonoBehaviour:
   maxSpeed: 3
   jumpVerticalForce: 0
   jumpHorizontalForce: 0
-  minDistance: 5
+  minDistance: 2
   collidersToTurnAroundOn:
     serializedVersion: 2
     m_Bits: 0
@@ -339,8 +339,8 @@ MonoBehaviour:
   enemyCharacter: {fileID: 0}
   type: 1
   followPlayerIfFound: 1
-  distance: 10
-  radius: 10
+  distance: 5
+  radius: 5
   detectorOffset: {x: -5, y: 0}
   layer:
     serializedVersion: 2

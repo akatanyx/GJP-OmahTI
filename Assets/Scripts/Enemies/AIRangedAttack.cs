@@ -31,7 +31,7 @@ public class AIRangedAttack : AIManagers
         
         if (nextFire <= 0 && enemyCharacter.playerIsClose && GetComponent<HealthManager>().healthPoints > 0)
         {
-            anim.SetTrigger("Attack");
+            anim.SetTrigger("Ranged Attack");
             
         }
         nextFire -= Time.deltaTime;
@@ -44,9 +44,11 @@ public class AIRangedAttack : AIManagers
         projectilePooled.transform.position = transform.position;
 
         Projectile projectile = projectilePooled.GetComponent<Projectile>();
+        //Debug.Log(projectile);
         //Vector2 newDirection = flip.isFlipped ? -bulletSpawner.transform.right : bulletSpawner.transform.right;
 
         Vector2 moveDirection = (player.transform.position - transform.position).normalized;
+        //Debug.Log(player.transform.position);
         projectile.SetDirection(moveDirection, transform.rotation);
 
         //projectile.GetComponent<Rigidbody2D>().velocity = moveDirection;

@@ -73,7 +73,7 @@ public class AIMeleeAttack : AIManagers
             
             //GetComponent<Animator>().SetTrigger("Attack");
             //anim.SetBool("Attack", true);
-            anim.SetTrigger("Attack");
+            anim.SetTrigger("Melee Attack");
             timeTillDoAction = originalTimeTillDoAction;
             if (hit)
             {
