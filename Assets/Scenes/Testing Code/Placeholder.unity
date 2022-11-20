@@ -357,7 +357,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247782257}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.66, y: -2.06, z: 0}
+  m_LocalPosition: {x: 0.43, y: 0.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 367658135}
@@ -421,7 +421,9 @@ MonoBehaviour:
   playerIsClose: 0
   originalTimeTillDoAction: 0
   timeTillDoAction: 0
-  switchTime: 5
+  switchTime: 10
+  rangedSpeed: 2.5
+  meleeSpeed: 10
 --- !u!114 &247782262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,7 +446,7 @@ MonoBehaviour:
   type: 1
   followPlayerIfFound: 1
   distance: 10
-  radius: 10
+  radius: 15
   detectorOffset: {x: -5, y: 0}
   layer:
     serializedVersion: 2
@@ -473,7 +475,7 @@ MonoBehaviour:
   swipeCollider: {fileID: 0}
   anim: {fileID: 0}
   swipe: {fileID: 367658134}
-  canKnockback: 0
+  canKnockback: 1
   knockbackForce: 10
   knockbackTime: 1
 --- !u!114 &247782264
@@ -495,7 +497,7 @@ MonoBehaviour:
   originalTimeTillDoAction: 1
   timeTillDoAction: 0
   enemyCharacter: {fileID: 0}
-  type: 0
+  type: 2
   spawnFacingLeft: 1
   turnAroundOnCollision: 0
   avoidFalling: 0
@@ -2733,7 +2735,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7, y: 1}
+  m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1772687646
 GameObject:
@@ -2793,7 +2795,7 @@ MonoBehaviour:
   originalTimeTillDoAction: 1
   timeTillDoAction: 0
   enemyCharacter: {fileID: 0}
-  type: 0
+  type: 1
   followPlayerIfFound: 1
   distance: 10
   radius: 10
@@ -2854,7 +2856,7 @@ MonoBehaviour:
   jump: 0
   standStill: 1
   timeTillMaxSpeed: 2
-  maxSpeed: 2
+  maxSpeed: 4
   jumpVerticalForce: 0
   jumpHorizontalForce: 0
   minDistance: 1
@@ -3425,11 +3427,11 @@ MonoBehaviour:
   originalTimeTillDoAction: 1
   timeTillDoAction: 0
   enemyCharacter: {fileID: 0}
-  type: 0
+  type: 1
   followPlayerIfFound: 1
   distance: 10
   radius: 10
-  detectorOffset: {x: -5, y: 0}
+  detectorOffset: {x: -5, y: -0.05}
   layer:
     serializedVersion: 2
     m_Bits: 128
@@ -3456,10 +3458,10 @@ MonoBehaviour:
   spawnFacingLeft: 1
   turnAroundOnCollision: 0
   avoidFalling: 0
-  jump: 0
+  jump: 1
   standStill: 1
   timeTillMaxSpeed: 2
-  maxSpeed: 2
+  maxSpeed: 8
   jumpVerticalForce: 0
   jumpHorizontalForce: 0
   minDistance: 1
@@ -3509,7 +3511,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 1.1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &2144139459
 Rigidbody2D:

@@ -26,6 +26,7 @@ public class Character : MonoBehaviour
     protected CharacterInputManager inputManager;
     protected CharacterFlip flip;
     protected CharacterAttack attack;
+    protected CharacterDash dash;
     protected MouseAim aim;
     #endregion
 
@@ -47,6 +48,7 @@ public class Character : MonoBehaviour
         jump = GetComponent<CharacterJump>();
         flip = GetComponent<CharacterFlip>();
         attack = GetComponent<CharacterAttack>();
+        dash = GetComponent<CharacterDash>();
         inputManager = GetComponent<CharacterInputManager>();
         aim = GetComponentInChildren<MouseAim>();
     }

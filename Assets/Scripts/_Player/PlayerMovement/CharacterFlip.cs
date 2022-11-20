@@ -39,17 +39,34 @@ public class CharacterFlip : Character
     public void FlipCharacter()
     {
         weaponAngle = aim.CurrentAimAngleAbsolute;
-        if (weaponAngle > 90 || weaponAngle < -90)
+        if (dash.isDashing)
+            return;
+        if ((weaponAngle > 90 || weaponAngle < -90))
         {
-            transform.localScale = facingLeft;
-            isFlipped = true;
+            //transform.localScale = facingLeft;
+            //isFlipped = true;
+            FlipLeft();
         }
         else
         {
-            transform.localScale = facingRight;
-            isFlipped = false;
+            //transform.localScale = facingRight;
+            //isFlipped = false;
+            FlipRight();
         }
     }
+
+    public void FlipLeft()
+    {
+        transform.localScale = facingLeft;
+        isFlipped = true;
+    }
+    
+    public void FlipRight()
+    {
+        transform.localScale = facingRight;
+        isFlipped = false;
+    }
+
 
     IEnumerator FlipChar()
     {

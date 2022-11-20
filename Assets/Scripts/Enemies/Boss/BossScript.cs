@@ -6,7 +6,7 @@ public class BossScript : EnemyCharacter
 {
     AIMeleeAttack meleeAttack;
     AIRangedAttack rangedAttack;
-    [SerializeField] float switchTime = 5;
+    [SerializeField] float switchTime = 5, rangedSpeed, meleeSpeed;
     bool isRanged;
     protected override void Initialization()
     {
@@ -28,22 +28,22 @@ public class BossScript : EnemyCharacter
     {
         if (isRanged)
         {
-            health.charType = HealthManager.characterType.immuneMelee;
+            health.charType = HealthManager.characterType.immuneRanged;
             meleeAttack.enabled = false;
             rangedAttack.enabled = true;
             health.sprite.color = Color.green;
             enemyMovement.minDistance = 5f;
-            enemyMovement.maxSpeed = 5;
+            enemyMovement.maxSpeed = rangedSpeed;
             isRanged = false;
         }
         else
         {
-            health.charType = HealthManager.characterType.immuneRanged;
+            health.charType = HealthManager.characterType.immuneMelee;
             meleeAttack.enabled = true;
             rangedAttack.enabled = false;
             health.sprite.color = Color.red;
             enemyMovement.minDistance = 1f;
-            enemyMovement.maxSpeed = 10;
+            enemyMovement.maxSpeed = meleeSpeed;
             isRanged = true;
         }
     }

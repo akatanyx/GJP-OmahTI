@@ -119,7 +119,7 @@ public class HealthManager : MonoBehaviour
             direction = direction.normalized * knockbackForce;
             rb.AddForce(direction, ForceMode2D.Impulse);
             yield return new WaitForSeconds(0.5f);
-            Debug.Log("tes0");
+            //Debug.Log("tes0");
             movement.enabled = true;
         }
         else
