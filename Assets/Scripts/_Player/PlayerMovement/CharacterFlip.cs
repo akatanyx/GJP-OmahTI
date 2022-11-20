@@ -26,7 +26,7 @@ public class CharacterFlip : Character
         facingRight = new Vector2(scaleX, transform.localScale.y);
         facingLeft = new Vector2(-scaleX, transform.localScale.y);
         aim = GetComponentInChildren<MouseAim>();
-        StartCoroutine(FlipChar());
+        //StartCoroutine(FlipChar());
     }
 
     void Update()
@@ -39,9 +39,9 @@ public class CharacterFlip : Character
     public void FlipCharacter()
     {
         weaponAngle = aim.CurrentAimAngleAbsolute;
-        if (dash.isDashing)
+        if (dash.isDashing || !attack.isAttacking)
             return;
-        if ((weaponAngle > 90 || weaponAngle < -90))
+        if ((weaponAngle > 90 || weaponAngle < -90) )
         {
             //transform.localScale = facingLeft;
             //isFlipped = true;
@@ -68,12 +68,12 @@ public class CharacterFlip : Character
     }
 
 
-    IEnumerator FlipChar()
-    {
-        while (!isPaused)
-        {
-            FlipCharacter();
-            yield return new WaitForSeconds(.1f);
-        }
-    }
+    //IEnumerator FlipChar()
+    //{
+    //    while (!isPaused)
+    //    {
+    //        FlipCharacter();
+    //        yield return new WaitForSeconds(.1f);
+    //    }
+    //}
 }

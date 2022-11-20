@@ -34,12 +34,12 @@ public class CharacterDash : Character
         if (inputManager.LeftHeld())
         {
             rb.velocity = new Vector2(-1 * dashingPower, 0f);
-            flip.FlipLeft();
+            //flip.FlipLeft();
         }
         else
         {
             rb.velocity = new Vector2(1 * dashingPower, 0f);
-            flip.FlipRight();
+            //flip.FlipRight();
         }
         //if (flip.isFlipped)
         //    rb.velocity = new Vector2(-1 * dashingPower, 0f);

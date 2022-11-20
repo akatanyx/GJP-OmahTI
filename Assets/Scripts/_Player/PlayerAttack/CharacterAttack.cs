@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CharacterAttack : Character
 {
-    private bool isAttacking, canAttack = true;
+    public bool isAttacking;
+    private bool canAttack = true;
     public bool canRangedAttackWhileMove;
     public bool isEnemyInProximity;
 
@@ -52,6 +53,7 @@ public class CharacterAttack : Character
     {
         if (inputManager.AttackPressed())
         {
+            flip.FlipCharacter();
             if (!isEnemyInProximity)
             {
                 anim.SetBool("AttackRanged", true);
